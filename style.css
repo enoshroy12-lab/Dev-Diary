@@ -27,7 +27,7 @@ h1 {
 .outside {
    height: auto;
   width: 90vw;
-  border: 5px solid #2b2828;
+  border: 5px solid #ece8e8;
   border-radius: 30px;
   padding: 30px; /* Uniform clean internal spacing */
   
