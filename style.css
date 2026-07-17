@@ -1,0 +1,147 @@
+/* 1. Global Reset */
+* {
+  box-sizing: border-box; /* Crucial: Keeps borders and padding inside your sizes */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #1a1a1a;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cleaner typography */
+  
+  /* Flexbox Centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* 2. Main Container Setup */
+.outside {
+   height: auto;
+  width: 90vw;
+  border: 5px solid #2b2828;
+  border-radius: 30px;
+  padding: 30px; /* Uniform clean internal spacing */
+  
+  /* FIXED: Smooth, professional dark-mode shadow */
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
+  
+  /* Prepares the box to arrange .photo and .matter down the road */
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+
+/* 3. Typography & Positioning */
+.first >.qu{
+  padding-left: 10px;
+  /* FLUID FONT: Scales smoothly between 1.2rem on mobile and 2.2rem on desktop automatically */
+  font-size: clamp(1.2rem, 3vh, 2.2rem); 
+  line-height: 1.4;
+  margin-bottom: 20px;
+  color:#d66e6e
+}
+
+.inside {
+  display: inline-block; /* Allows predictable spacing and padding behavior */
+  color: #8b8df0;        /* Soft gray color to create a visual hierarchy */
+  font-style: italic;
+  
+  /* Default Mobile Indentation */
+  padding-left: 20px; 
+  margin-top: 5px;
+}
+.first,.second,.third{
+    border:1px dashed #f50b0b;
+}
+
+/* this is the intro div */
+.first{
+    grid-area: first;
+}
+
+
+
+/* this is task div */
+.second{
+    grid-area: second;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    width:100%;
+    justify-content: space-around;
+}
+ul{
+    padding-left: 20px;
+    line-height: 1.4;
+    /* list-style: none; */
+    text-overflow: warp;
+}
+
+img{
+    width: auto;
+    height: 40px;
+}
+.tar{
+    padding-bottom: 10px;
+}
+.second>h2{
+    padding-top: 10px;
+}
+
+/* this is skills div */
+.third{
+    grid-area: third;
+    /* display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column; */
+}
+
+
+/* 4. Streamlined Media Queries (Only for specific layout shifts) */
+@media (min-width: 768px) {
+  .inside {
+    padding-left: 40px; /* Slightly deeper indentation for tablets and laptops */
+  }
+  .outside{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "first second"
+    "third second";
+  }
+  img{
+    height:80px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inside {
+    padding-left: 60px; /* Clean look for large desktop monitors */
+  }
+  .outside{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "first second"
+    "third second";
+  }
+}
+.image{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
